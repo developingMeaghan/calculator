@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+    
+    <head>
+        <title>Calculator</title>
+        <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+        <script src="calc.js"></script>
+    </head>
+
+    <body>
+
+        <!--calc body-->
+        <div class="container">
+
+            <div class="calculator">
+
+                <div class="calculatorDisplay"><p id="displayNum">0</p></div>
+            
+                    <div class="calculatorKeys">
+
+                        <!--oerator buttons (+,-,*,/)-->
+                        <button class="keyOperator" data-action="add" onclick="setOperator('+')">+</button>
+                        <button class="keyOperator" data-action="subtract" onclick="setOperator('-')">-</button>
+                        <button class="keyOperator" data-action="multiply" onclick="setOperator('*')">*</button>
+                        <button class="keyOperator" data-action="divide" onclick="setOperator('/')">/</button>
+
+                        <!--number buttons-->
+                        <button onclick="place(7)">7</button>
+                        <button onclick="place(8)">8</button>
+                        <button onclick="place(9)">9</button>
+                        <button onclick="place(4)">4</button>
+                        <button onclick="place(5)">5</button>
+                        <button onclick="place(6)">6</button>
+                        <button onclick="place(1)">1</button>
+                        <button onclick="place(2)">2</button>
+                        <button onclick="place(3)">3</button>
+                        <button onclick="place(0)">0</button>
+
+                        <!--other calc fuction buttons-->
+                        <button data-action="decimal" onclick="place('.')">.</button>
+                        <button data-action="clear" onclick="clearCalc()">AC</button>
+                        <button class="keyEqual" data-action="calculate" onclick="calculate()">=</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>      
+
+    </body>
+
+</html>
