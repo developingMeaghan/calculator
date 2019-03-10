@@ -52,7 +52,7 @@ ol,ul
 }
 
 
-
+/* what things look like when they are entered*/ 
 input,textarea,button 
 {
   border: 0;
@@ -82,7 +82,7 @@ html
   font-weight: 300;
   line-height: 1.3;
 }
-
+/* background colour and control */
 body 
 {
   align-items: center;
@@ -101,7 +101,7 @@ body
 {
   text-align: center;
 }
-
+/* border effect */
 .calculator 
 {
   border-radius: 12px;
@@ -113,6 +113,7 @@ body
   overflow: hidden;
 }
 
+/* color of keys */
 .calculatorDisplay 
 {
   background-color: #F4ACAC;
@@ -138,6 +139,7 @@ body
   text-align: center;
 }
 
+/* key effects */
 .calculatorKeys > *:active::before,.calculatorKeys > .is-depressed::before 
 {
   background-color: rgba(0, 0, 0, 0.2);
@@ -157,6 +159,7 @@ body
   background-color: #eee;
 }
 
+/* equal button color */
 .keyEqual
 {
   background-image: linear-gradient(to bottom, #B0EBFA, #47DAFE);

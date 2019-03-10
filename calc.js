@@ -35,7 +35,7 @@ function calculate(){
     }
 }
 
-//makes numbers appear
+//Stores the numbers so when you hit them you can see them
 function assignNumber(num){
     if (!firstnum || firstnum == 0){
         firstnum = Number(num);
@@ -55,14 +55,14 @@ function place(value){
     }
 }
 
-//makes operator buttons work
+//registers the operator being used (+,-,*,/)
 function setOperator(symbol){
     operator = symbol;
     assignNumber(display.innerText);
     display.innerText = 0;
 }
 
-//clears history of calc
+//when you hit AC it clears the calc and only when you hit AC
 function clearCalc(){
     display.innerText = 0;
     firstnum = 0;
