@@ -1,48 +1,70 @@
-// This is what the window is listening to
-const calculator = document.querySelector(".calulator")
-const keys = document.querySelector(".calculator__keys")
+//variables
+var firstnum
+var secondnum
+var operator
+var sum
+var display
 
-//targeting buttons to do what we want
-keys.addEventListener("click", e => {
-    if (e.target.matches("button")){
-        // determines type of key being used
-        const key = e.target
-        const action = keys.dataset.action
+//this excutes display num after timer runs out 
+setTimeout(() =>{ display = document.getElementById("displayNum"); });
+
+//Recognizes that when first number is pushed followed by  operator(+,-,*,/ ) and the second number it needs to execute sum
+function calculate(){
+    assignNumber(Number(display.innerText));
+    if (operator == "+"){
+        sum = firstnum + secondnum;
+        display.innerText = sum;
     }
-  })
 
-// if the key doesn't have data attribute it must be a number key
-if(!action){
-    console.log("number key!")
+    if (operator == "-"){
+        sum = firstnum - secondnum;
+        display.innerText = sum;
+    }
+
+    if (operator == "/"){
+        if (secondnum == 0){
+            return display.innerText = 0;
+        }
+        sum = firstnum / secondnum;
+        display.innerText = sum;
+    }
+
+    if (operator == "*"){
+        sum = firstnum * secondnum;
+        display.innerText = sum;
+    }
 }
 
-// operator keys
-if (
-    action === "add" ||
-    action === "subtract" ||
-    action === "mulitply" ||
-    action === "divide"
-){
-    console.log("operator key!")
+//makes numbers appear
+function assignNumber(num){
+    if (!firstnum || firstnum == 0){
+        firstnum = Number(num);
+        display.innerText = num;
+    } else
+    if (!secondnum || secondnum == 0){
+        secondnum = Number(num);
+        display.innerText = num;
+    }
 }
 
-//data action keys
-if (
-    action === "decimal"
-){
-    console.log("decimal key!")
+function place(value){
+    if (display.innerText == 0){
+        display.innerText = value;
+    } else{
+        display.innerText = display.innerText + value;
+    }
 }
 
-if (
-    action === "clear"
-){
-    console.log("clear key!")
+//makes operator buttons work
+function setOperator(symbol){
+    operator = symbol;
+    assignNumber(display.innerText);
+    display.innerText = 0;
 }
 
-if (
-    action === "calculate"
-){
-    console.log("equal key!")
+//clears history of calc
+function clearCalc(){
+    display.innerText = 0;
+    firstnum = 0;
+    secondnum = 0;
 }
-
-
